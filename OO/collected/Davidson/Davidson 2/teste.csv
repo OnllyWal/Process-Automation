@@ -1,0 +1,6 @@
+nome,sobrenome,turma,orientador_1,orientador_2,obs,email,matricula,academico,eh_bolsista,nome_da_bolsa,defesa,data_defesa,artigo,autores_artigo,qualificacao,data_qualificacao,banca_qualificacao,estrato,tempo_suspenso,data_inicio_suspensao,situacao,motivo
+Maria,Souza,Turma A,Dr. João,Dr. Ana,Observação 1,maria.souza@example.com,2023001,http://academico.com/maria,TRUE,Bolsa A,FALSE,,Artigo A,Autor A,FALSE,,,"E",,
+José,Santos,Turma B,Dr. Carlos,Dr. Beatriz,Observação 2,jose.santos@example.com,2023002,http://academico.com/jose,TRUE,Bolsa B,TRUE,2023-10-01,Artigo B,Autor B,TRUE,2023-05-15,"Dr. Maria, Dr. João",B,10,2023-09-01,A,"Atraso na entrega"
+Ana,Pereira,Turma C,Dr. Luiz,,Observação 3,ana.pereira@example.com,2023003,http://academico.com/ana,FALSE,,TRUE,2023-11-20,Artigo C,Autor C,FALSE,,,"C",5,2023-08-10,D,"Motivo Pessoal"
+Carlos,Oliveira,Turma D,Dr. João,Dr. Fernanda,Observação 4,carlos.oliveira@example.com,2023004,http://academico.com/carlos,TRUE,Bolsa C,FALSE,,Artigo D,Autor D,TRUE,2023-07-18,"Dr. Carlos, Dr. Beatriz",A,0,,E,""
+Luiza,Silva,Turma E,Dr. Ana,,Observação 5,luiza.silva@example.com,2023005,http://academico.com/luiza,FALSE,,TRUE,2023-10-15,Artigo E,Autor E,FALSE,,,"B",2,2023-09-15,B,"Falta de Documentação"
