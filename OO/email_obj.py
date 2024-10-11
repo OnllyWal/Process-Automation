@@ -1,5 +1,5 @@
 class Email:
-    def __init__(self, sender_name: str, complete_name: str, email_name: str, subject: str, body: str, attachments: list):
+    def __init__(self, sender_name: str, complete_name: str, email_name: str, subject: str, body: str, attachments: list, crua):
         """
         Inicializa um objeto Email com os detalhes do remetente, assunto, corpo e anexos.
         
@@ -16,6 +16,7 @@ class Email:
         self.subject = subject
         self.body = body
         self.attachments = attachments
+        self.crua = crua
 
     def __repr__(self):
         return (f"Email(sender_name={self.sender_name}, complete_name={self.complete_name}, "
