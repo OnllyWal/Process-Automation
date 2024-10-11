@@ -14,6 +14,7 @@ class EmailCollector:
         '''Connects to the Gmail server.'''
         self.connection = imaplib.IMAP4_SSL("imap.gmail.com")
         self.connection.login(self.email_address, self.password)
+        print("conectado")
         self.connection.select('inbox', readonly=False)  # Permite modificar a caixa de entrada (marcar emails como lidos)
 
     def fetch_emails(self):
@@ -29,6 +30,7 @@ class EmailCollector:
             results, data = self.connection.fetch(num, '(RFC822)')
             text = data[0][1].decode('utf-8')
             msg = email_lib.message_from_string(text)
+    
 
             email_obj = self.process_email(msg)  # Processa o email e retorna um objeto Email
             if email_obj:
@@ -43,6 +45,8 @@ class EmailCollector:
         subject_name = msg['Subject'] if msg['From'] else "Unknown"
         email_name = msg['From'].split(" ")[-1].strip('<>') if len(msg['From'].split(" ")) > 0 else "Unknown"
         complete_name = msg['From'].split('<')[0].strip()
+        crua = str(msg)
+        print(crua)
 
         attachments = []  # Lista para armazenar os caminhos dos anexos
         email_body = ''  # String para armazenar o corpo do email
@@ -57,13 +61,13 @@ class EmailCollector:
                     attachments.append(attachment_path)
 
         # Cria e retorna um objeto Email
-        return Email(sender_name, complete_name, email_name, subject_name, email_body, attachments)
+        return Email(sender_name, complete_name, email_name, subject_name, email_body, attachments, crua)
 
     def save_attachment(self, part, sender_name):
         '''Saves email attachments and returns the path of the saved file.'''
         filename = part.get_filename()
         if filename:
-            base_dir = f'/home/wal/Auto/OO/collected/{sender_name}'
+            base_dir = f'/home/wal/ProcessAutomation/Process-Automation/OO/collected/{sender_name}'
             os.makedirs(base_dir, exist_ok=True)
 
             # Gera um caminho de arquivo único para o anexo
