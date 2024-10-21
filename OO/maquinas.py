@@ -44,11 +44,12 @@ def usuarios(arquivo_de_ips, usuario_de_acesso, senha_de_acesso, usuario_novo, s
                 # Executa comando remoto
                 stdin, stdout, stderr = client.exec_command(command)
                 
-                if(stderr.read().decode()):
-                    print(f"Erro ao criar o usuário '{usuario_novo}' no {ip}: {stderr.read().decode()}")
-                    
+                error_output = stderr.read().decode()
+                if error_output:
+                    print(f"Erro ao criar o usuário '{usuario_novo}' no {ip}: {error_output}")
                 else:
-                    print(f"O usuário '{usuario_novo}' criado no {ip}.")
+                    print(f"O usuário '{usuario_novo}' foi criado no {ip}.")
+                    
             
         except paramiko.ssh_exception.NoValidConnectionsError as e:
             print(f"Não foi possível conectar ao {ip}: {str(e)}")
@@ -62,3 +63,4 @@ def usuarios(arquivo_de_ips, usuario_de_acesso, senha_de_acesso, usuario_novo, s
                 client.close()  # Fecha a conexão se estiver aberta
             except:
                 pass  # Se não conseguiu conectar, ignora o fechamento
+    return usuario_novo, senha_novo
