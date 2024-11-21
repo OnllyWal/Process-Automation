@@ -4,7 +4,6 @@ from docx import Document
 def replace_words_in_document(doc, word_dict):
  
     for para in doc.paragraphs:
-        # Verifica cada "run" (trecho de texto com formatação diferente)
         for run in para.runs:
             for old_word, new_word in word_dict.items():
                 if old_word in run.text:
