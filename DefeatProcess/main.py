@@ -1,11 +1,7 @@
 from doc_editor import process_documents
 
-# Exemplo de uso:
 input_directory = "/home/wal/ProcessAutomation/DefeatProcess/input"  # Substitua pelo caminho da pasta de entrada
 output_directory = "/home/wal/ProcessAutomation/DefeatProcess/output"  # Substitua pelo caminho da pasta de saída
-
-# Dicionário de palavras a serem substituídas
-#numero_dia,nome_mes,numero_ano,numero_sala,nome_completo_aluno,titulo_tese,nome_orientador1,nome_orientador2,nome_membro_interno,nome_membro_externo = data_receiver()
 
 nome_coordenador = "Francisco de Assis Boldt"
 numero_dia = "15"
@@ -34,5 +30,4 @@ word_dict = {
     "nome_membro_externo": nome_membro_externo
 }
 
-# Processar todos os documentos na pasta de entrada
 process_documents(input_directory, output_directory, word_dict)
