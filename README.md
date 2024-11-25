@@ -4,9 +4,9 @@
 
 # 🌟 Lista de Automações
 
-- (Auto902)Liberação e Controle de Máquinas: Coletando, lendo e enviando emails de forma automatizada, torna-se possível a liberação do acesso dos alunos as máquinas via VPN e a criação de login e senha para uso dos alunos de forma autônoma.
+- (EmailAPI)Coleta e Envio de Email: Realiza a Coleta e o envio do email a partir de  bibliotecas como IMAP E STMP.
+- (Auto902)Liberação e Controle de Máquinas: Liberação do acesso dos alunos as máquinas via VPN e a criação de login e senha para uso dos alunos de forma autônoma.
+- (AutoDef)Criação de Documentos e abertura de chamado: A partir dos emails coletados, cria os respectivos documentos associados ao processo de Defesa.
 
 ## 👥 Autores
-
-- Davidson Carvalho dos Santos - [@Davidsonnj](https://github.com/Davidsonnj)
 - Wal Candeia - [@onllywal](https://github.com/onllywal)
