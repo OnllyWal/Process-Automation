@@ -36,12 +36,11 @@ def main():
                 if email_obj not in sent_emails:
                 
                     #Se o endereço de email for do coordenador, processa como resposta
-                    if email_obj.email_name == destinatario:
-                    #processar_resposta_acesso(email_obj, sent_emails, sender)
+                        if email_obj.email_name == destinatario:
+                        processar_resposta_acesso(email_obj, sent_emails, sender)
                     
-                        if ("Defesa" in email_obj.subject) or ("Banca" in email_obj.subject):
+                        if ("Preenchimento Dados Defesa" in email_obj.subject):
                             documentos = start_doc_process(email_obj.body)
-
                             text = text_chamado(email_obj.body)
                             if not documentos:
                                 print("Nenhum documento encontrado na pasta.")
@@ -70,14 +69,14 @@ def main():
                             remove_docs(documentos)
 
                         
-                        '''#Se o título for identificado como Defesa, inicia o processo da Defesa
+                        #Se o título for identificado como Defesa, inicia o processo da Defesa
                         if ("Defesa" in email_obj.subject) or ("Banca" in email_obj.subject):
                             agente = email_obj.complete_name
                             adress = email_obj.email_name
                             email_obj.sender_name = "Equipe"
                             email_obj.complete_name = "Equipe PPComp"
                             email_obj.subject = "Preenchimento Dados Defesa"
-                            email_obj.body = 
+                            email_obj.body = '''
 
                             Nome Completo Aluno: 
                             Título: 
@@ -90,11 +89,12 @@ def main():
                             Coorientador: 
                             Membro Interno: 
                             Membro Externo: 
+                            '''
                             
                             sender.send_email(email_obj, adress)
                             sent_emails.append(email_obj)
                             print(f"Email do tipo Defesa enviado de {agente} para {destinatario}.")
-                            '''
+                            
 
                         #Se o título for indentificado como Acesso, inicia o processo de Acesso
                         if ("Acesso" in email_obj.subject) or ("Computador" in email_obj.subject):
